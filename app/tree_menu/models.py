@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Menu(models.Model):
-    title = models.CharField('Название', max_length=128)
+    title = models.CharField('Название', max_length=128, unique=True)
 
     class Meta:
         verbose_name = 'меню'
