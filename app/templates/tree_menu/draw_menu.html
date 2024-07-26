@@ -1,0 +1,10 @@
+<ul>
+  {% for item in tree %}
+    <li>
+      <a href="?{{ menu }}={{ item.pk }}">{{ item.title }}</a>
+      {% if parents and item in parents %}
+        {% include "tree_menu/draw_menu.html" with tree=item.children %}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
